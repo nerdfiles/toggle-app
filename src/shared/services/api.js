@@ -1,10 +1,10 @@
 /**
- *
+ * @description
+ * some service layer abstraction
  */
 
 const api = () => {
   const apiData = () => {
-    console.log()
     return new Promise((resolve, reject) => {
       resolve({})
     })
