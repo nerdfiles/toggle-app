@@ -1,12 +1,18 @@
 import React, { useState } from 'react';
+import { apiData } from '../../services/api'
 
-const List: React.FC = () => {
+const List: React.FC = async () => {
   const listDataFromApi = ['off', 'off', 'off'];
+  const asyncDataFromApi = await apiData();
   const [sectionState, setSectionState] = useState(listDataFromApi)
+  const OFF_STATE = 'off'
+  const ON_STATE = 'on'
   const clickHandler = (e) => {
     const newState = [].concat(listDataFromApi)
     const tabIndexSelection = e.target.tabIndex
-    newState[(tabIndexSelection-1)] = sectionState[(tabIndexSelection-1)] !== 'off' ? 'off' : 'on'
+    newState[(tabIndexSelection-1)] = sectionState[(tabIndexSelection-1)] !== OFF_STATE
+      ? OFF_STATE 
+      : ON_STATE
     setSectionState(newState)
   }
 
