@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import apiData from '../../services/api'
-import Listing from '../Listing/Listing.js';
+import Listing from '../Listing/Listing';
 
 const List: React.FC = () => {
   const listDataFromApi = ['off', 'off', 'off'];
@@ -12,10 +12,10 @@ const List: React.FC = () => {
         <ul aria-label="list of whateverness" 
             className="M-list-component__list">
           {
-            listDataFromApi.length
+            (listDataFromApi && listDataFromApi.length)
             ? listDataFromApi.map((val, index) => {
               return (
-                <Listing sectionState={sectionState} 
+                <Listing logicalState={sectionState} 
                          listDataFromApi={listDataFromApi}
                          setSectionState={setSectionState} 
                          key={index} 

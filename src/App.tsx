@@ -1,9 +1,10 @@
 import logo from './logo.svg';
+import React from 'react';
 import './App.css';
 
-import List from './shared/components/List/List.js';
+import List from './shared/components/List/List';
 
-function App() {
+const App: React.FC = () => {
   return (
     <div className="App">
       <List />
