@@ -5,7 +5,7 @@ import Listing from '../Listing/Listing';
 const List: React.FC = () => {
   const listDataFromApi = ['off', 'off', 'off'];
   //const asyncDataFromApi = await apiData();
-  const [sectionState, setSectionState] = useState(listDataFromApi)
+  const [localState, setLocalState] = useState(listDataFromApi)
   return (
     <>
       <div className="O-list-component__container">
@@ -15,9 +15,9 @@ const List: React.FC = () => {
             (listDataFromApi && listDataFromApi.length)
             ? listDataFromApi.map((val, index) => {
               return (
-                <Listing logicalState={sectionState} 
+                <Listing localState={localState} 
                          listDataFromApi={listDataFromApi}
-                         setSectionState={setSectionState} 
+                         setLocalState={setLocalState} 
                          key={index} 
                          index={index} 
                          val={val} />
