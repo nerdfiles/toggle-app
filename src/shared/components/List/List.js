@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import apiData from '../../services/api'
 import Listing from '../Listing/Listing.js';
 
-const List: React.FC = async () => {
+const List: React.FC = () => {
   const listDataFromApi = ['off', 'off', 'off'];
   //const asyncDataFromApi = await apiData();
   const [sectionState, setSectionState] = useState(listDataFromApi)
@@ -16,9 +16,9 @@ const List: React.FC = async () => {
             ? listDataFromApi.map((val, index) => {
               return (
                 <Listing sectionState={sectionState} 
+                         listDataFromApi={listDataFromApi}
                          setSectionState={setSectionState} 
                          key={index} 
-                         data={listDataFromApi} 
                          index={index} 
                          val={val} />
               )

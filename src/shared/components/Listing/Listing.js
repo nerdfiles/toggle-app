@@ -1,11 +1,11 @@
 import React from 'react'
 
-const Listing: React.FC = ({ data, index, val, sectionState, setSectionState }) => {
+const Listing: React.FC = ({ listDataFromApi, index, val, sectionState, setSectionState }) => {
   const OFF_STATE = 'off'
   const ON_STATE = 'on'
 
   const clickHandler = (e) => {
-    const newState = [].concat(data)
+    const newState = [].concat(listDataFromApi)
     const tabIndexSelection = e.target.tabIndex
     newState[(tabIndexSelection-1)] = sectionState[(tabIndexSelection-1)] !== OFF_STATE
       ? OFF_STATE 
