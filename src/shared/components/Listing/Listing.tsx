@@ -1,17 +1,10 @@
+/**
+ * @fileoverview ./src/shared/components/Listing/Listing.tsx
+ * @description
+ * Listing child component for List parent component.
+ */
 import React, { Props } from 'react'
-
-interface SetLocalState {
-  (payload: string[]): void;
-}
-
-interface Accordian {
-  localState: string[],
-  listDataFromApi: string[],
-  key: number,
-  index: number,
-  val: string,
-  updateOr: SetLocalState
-}
+import Accordian from '../../models/Accordian'
 
 const Listing: React.FC<Accordian> = (props: Accordian) => {
   const OFF_STATE = 'off'
@@ -45,3 +38,5 @@ const Listing: React.FC<Accordian> = (props: Accordian) => {
 }
 
 export default Listing
+
+// EOF
