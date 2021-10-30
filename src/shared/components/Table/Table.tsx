@@ -3,6 +3,8 @@
  * @description
  * Custom table component.
  */
+import React from 'react'
+
 
 const Table: React.FC = () => {
   return (
@@ -22,6 +24,7 @@ const Table: React.FC = () => {
     </>
   );
 }
+
 
 export default Table
 

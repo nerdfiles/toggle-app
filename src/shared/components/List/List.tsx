@@ -3,7 +3,7 @@
  * @description
  * A list container component.
  *
- * listDataFromApi could be a list of objects instead of "stateful" strings, 
+ * getDataFromApi could be a list of objects instead of "stateful" strings, 
  * which are loaded via pubsub (think resthooks.org) for async REST with HATEOAS 
  * or just by some async promise-work; e.g., 
  * ```
@@ -11,6 +11,10 @@
  * ```
  * then map over the objects, check the status property for meaningful truth 
  * or whatever hierarchicalization you wish in business logic
+ *
+ * say
+ *
+ * const asyncDataFromApi = await apiData();
  */
 import React, { useState } from 'react';
 import apiData from '../../services/api'
@@ -18,9 +22,8 @@ import Listing from '../Listing/Listing';
 
 
 const List: React.FC = () => {
-  const listDataFromApi: string[] = ['off', 'off', 'off'];
-  //const asyncDataFromApi = await apiData();
-  const [localState, setLocalState] = useState(listDataFromApi)
+  const getDataFromApi: string[] = ['off', 'off', 'off'];
+  const [localState, setLocalState] = useState(getDataFromApi)
   const updateOr = (payload: string[]) => {
     setLocalState(payload)
   }
@@ -28,14 +31,15 @@ const List: React.FC = () => {
   return (
     <>
       <div className="O-list-component__container">
+        <h1>list component</h1>
         <ul aria-label="list of whateverness" 
             className="M-list-component__list">
           {
-            (listDataFromApi && listDataFromApi.length)
-            ? listDataFromApi.map((val, index) => {
+            (getDataFromApi && getDataFromApi.length)
+            ? getDataFromApi.map((val, index) => {
               return (
                 <Listing localState={localState} 
-                         listDataFromApi={listDataFromApi}
+                         getDataFromApi={getDataFromApi}
                          updateOr={updateOr} 
                          key={index} 
                          index={index} 

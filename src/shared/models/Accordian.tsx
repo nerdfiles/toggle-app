@@ -8,7 +8,7 @@ interface SetLocalState {
 
 interface Accordian {
   localState: string[],
-  listDataFromApi: string[],
+  getDataFromApi: string[],
   key: number,
   index: number,
   val: string,
