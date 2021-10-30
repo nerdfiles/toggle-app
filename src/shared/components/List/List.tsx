@@ -3,13 +3,11 @@ import apiData from '../../services/api'
 import Listing from '../Listing/Listing';
 
 const List: React.FC = () => {
-  const listDataFromApi: any[] = ['off', 'off', 'off'];
+  const listDataFromApi: string[] = ['off', 'off', 'off'];
   //const asyncDataFromApi = await apiData();
   const [localState, setLocalState] = useState(listDataFromApi)
-  const updateOr = (payload: any[]) => {
-    if (payload) {
-      setLocalState(payload)
-    }
+  const updateOr = (payload: string[]) => {
+    setLocalState(payload)
   }
   return (
     <>
