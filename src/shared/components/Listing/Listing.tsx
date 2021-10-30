@@ -1,34 +1,37 @@
 import React, { Props } from 'react'
 
 interface SetLocalState {
-  (localState: string): string;
+  (payload: any[]): void;
 }
 
 interface Accordian {
   localState: object,
-  listDataFromApi: string[],
+  listDataFromApi: any[],
   key: number,
   index: number,
   val: string,
-  setLocalState: SetLocalState
+  updateOr: SetLocalState
 }
 
-const Listing: React.FC<Accordian> = ({ listDataFromApi, index, val, localState, setLocalState }: Accordian) => {
+const Listing: React.FC<Accordian> = (props: Accordian) => {
   const OFF_STATE = 'off'
   const ON_STATE = 'on'
 
-  const clickHandler = (e: any) => {
-    const newState = [].concat(listDataFromApi)
-    const tabIndexSelection = e.target.tabIndex
-    newState[(tabIndexSelection-1)] = localState[(tabIndexSelection-1)] !== OFF_STATE
+  const clickHandler = (event: React.FormEvent<HTMLHeadingElement>) => {
+    const a: any[] = []
+    const newState: any[] = a.concat(props.listDataFromApi)
+    console.log(event)
+    const tabIndexSelection: number = 1
+    const ind: number = (tabIndexSelection-1)
+    newState[ind] = props.localState[ind] !== OFF_STATE
       ? OFF_STATE 
       : ON_STATE
-    setLocalState(newState)
+    props.updateOr({ payload: newState })
   }
   return (
     <li className="A-list-component__listing">
       <h2 className="A-list-component__header"
-          tabIndex={(index+1)}
+          tabIndex={''+(index+1)}
           aria-expanded={localState[index] !== val ? 'true' : 'false'}
           onKeyPress={clickHandler}
           onClick={clickHandler}>section {index}</h2>

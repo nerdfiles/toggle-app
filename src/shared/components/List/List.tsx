@@ -3,9 +3,14 @@ import apiData from '../../services/api'
 import Listing from '../Listing/Listing';
 
 const List: React.FC = () => {
-  const listDataFromApi = ['off', 'off', 'off'];
+  const listDataFromApi: any[] = ['off', 'off', 'off'];
   //const asyncDataFromApi = await apiData();
   const [localState, setLocalState] = useState(listDataFromApi)
+  const updateOr = (payload: any[]) => {
+    if (payload) {
+      setLocalState(payload)
+    }
+  }
   return (
     <>
       <div className="O-list-component__container">
@@ -17,7 +22,7 @@ const List: React.FC = () => {
               return (
                 <Listing localState={localState} 
                          listDataFromApi={listDataFromApi}
-                         setLocalState={setLocalState} 
+                         updateOr={updateOr} 
                          key={index} 
                          index={index} 
                          val={val} />
