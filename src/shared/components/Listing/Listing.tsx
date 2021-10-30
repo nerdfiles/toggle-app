@@ -10,10 +10,8 @@ import Accordian from '../../models/Accordian'
 const Listing: React.FC<Accordian> = (props: Accordian) => {
   const OFF_STATE = 'off'
   const ON_STATE = 'on'
-  const ARIA_BOOL_NOT_TRULY_TRUE: string = 'false'
-  const ARIA_BOOL_TRULY_TRUE: string = 'true'
-  const INDEX_UNIT: number = props.index
-  const VALUE_UNIT: string = props.val
+  const ARIA_BOOL_NOT_TRULY_TRUE: boolean = false
+  const ARIA_BOOL_TRULY_TRUE: boolean = true
   const clickHandler = (event: React.UIEvent<HTMLHeadingElement>) => {
     const DEFAULT_TAB_OFFSET: number = 1
     const initArray: string[] = []
@@ -33,14 +31,14 @@ const Listing: React.FC<Accordian> = (props: Accordian) => {
   return (
     <li className="A-list-component__listing">
       <h2 className="A-list-component__header"
-          tabIndex={(INDEX_UNIT+1)}
-          aria-expanded={props.localState[INDEX_UNIT] !== VALUE_UNIT 
+          tabIndex={(props.index+1)}
+          aria-expanded={props.localState[props.index] !== props.val 
             ? ARIA_BOOL_TRULY_TRUE 
             : ARIA_BOOL_NOT_TRULY_TRUE}
           onKeyPress={clickHandler}
-          onClick={clickHandler}>section {INDEX_UNIT}</h2>
-      <ul className={props.localState[INDEX_UNIT]}>
-        <li>data regarding listing ({INDEX_UNIT}): {VALUE_UNIT}</li>
+          onClick={clickHandler}>section {props.index}</h2>
+      <ul className={props.localState[props.index]}>
+        <li>data regarding listing ({props.index}): {props.val}</li>
       </ul>
     </li>
   )
