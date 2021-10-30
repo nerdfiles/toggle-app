@@ -1,6 +1,7 @@
 /**
- * @fileoverview
+ * @fileoverview ./src/shared/components/List/List.tsx
  * @description
+ * A list container component.
  */
 import React, { useState } from 'react';
 import apiData from '../../services/api'
