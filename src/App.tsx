@@ -9,7 +9,8 @@ const App: React.FC = () => {
     <div className="App">
       <List />
       <div>
-        <a href="https://github.com/nerdfiles/toggle-app" target="_blank">repo</a>
+        <a href="https://github.com/nerdfiles/toggle-app" 
+           target="_blank">repo</a>
       </div>
     </div>
   );

@@ -1,6 +1,11 @@
+/**
+ * @fileoverview
+ * @description
+ */
 import React, { useState } from 'react';
 import apiData from '../../services/api'
 import Listing from '../Listing/Listing';
+
 
 const List: React.FC = () => {
   const listDataFromApi: string[] = ['off', 'off', 'off'];
@@ -9,6 +14,7 @@ const List: React.FC = () => {
   const updateOr = (payload: string[]) => {
     setLocalState(payload)
   }
+
   return (
     <>
       <div className="O-list-component__container">
@@ -35,3 +41,5 @@ const List: React.FC = () => {
 }
 
 export default List;
+
+// EOF

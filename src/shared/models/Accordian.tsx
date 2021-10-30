@@ -1,3 +1,7 @@
+/**
+ * @fileoverview
+ * @description
+ */
 interface SetLocalState {
   (payload: string[]): void;
 }

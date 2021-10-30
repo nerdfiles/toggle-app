@@ -1,4 +1,5 @@
 /**
+ * @fileoverview
  * @description
  * some service layer abstraction
  */
@@ -15,3 +16,5 @@ const api = () => {
 }
 
 export default api
+
+// EOF
