@@ -2,16 +2,20 @@
  * @fileoverview
  * @description
  */
+interface DataShell {
+  mode: string
+}
+
 interface SetLocalState {
-  (payload: string[]): void;
+  (payload: DataShell[]): void;
 }
 
 interface Accordian {
-  localState: string[],
-  getDataFromApi: string[],
+  localState: DataShell[],
+  getDataFromApi: DataShell[],
   key: number,
   index: number,
-  val: string,
+  val: DataShell,
   updateOr: SetLocalState
 }
 

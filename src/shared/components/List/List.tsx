@@ -20,11 +20,15 @@ import React, { useState } from 'react';
 import apiData from '../../services/api'
 import Listing from '../Listing/Listing';
 
+interface DataShell {
+  mode: string
+}
+
 
 const List: React.FC = () => {
-  const getDataFromApi: string[] = ['off', 'off', 'off'];
+  const getDataFromApi: DataShell[] = [{ mode: 'off' }, { mode: 'on' }];
   const [localState, setLocalState] = useState(getDataFromApi)
-  const updateOr = (payload: string[]) => {
+  const updateOr = (payload: DataShell[]) => {
     setLocalState(payload)
   }
 
