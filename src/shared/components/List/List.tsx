@@ -23,7 +23,14 @@ import DataShell from '../../models/DataShell'
 
 
 const List: React.FC = () => {
-  const getDataFromApi: DataShell[] = [{ mode: 'off' }, { mode: 'on' }];
+  const getDataFromApi: DataShell[] = [
+    { mode: 'off' }, 
+    { mode: 'off' }, 
+    { mode: 'off' }, 
+    { mode: 'on' }, 
+    { mode: 'off' }, 
+    { mode: 'off' }
+  ];
   const [localState, setLocalState] = useState(getDataFromApi)
   const updateOr = (payload: DataShell[]) => {
     setLocalState(payload)
