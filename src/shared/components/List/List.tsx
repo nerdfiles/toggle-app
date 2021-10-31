@@ -19,10 +19,7 @@
 import React, { useState } from 'react';
 import apiData from '../../services/api'
 import Listing from '../Listing/Listing';
-
-interface DataShell {
-  mode: string
-}
+import DataShell from '../../models/DataShell'
 
 
 const List: React.FC = () => {

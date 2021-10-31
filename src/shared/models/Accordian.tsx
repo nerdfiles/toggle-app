@@ -2,9 +2,9 @@
  * @fileoverview
  * @description
  */
-interface DataShell {
-  mode: string
-}
+
+import DataShell from './DataShell'
+
 
 interface SetLocalState {
   (payload: DataShell[]): void;

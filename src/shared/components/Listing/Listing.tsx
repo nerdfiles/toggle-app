@@ -5,10 +5,7 @@
  */
 import React from 'react'
 import Accordian from '../../models/Accordian'
-interface DataShell {
-  mode: string
-}
-
+import DataShell from '../../models/DataShell'
 
 
 const Listing: React.FC<Accordian> = (props: Accordian) => {
