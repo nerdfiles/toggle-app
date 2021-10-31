@@ -21,19 +21,20 @@ const Listing: React.FC<Accordian> = (props: Accordian) => {
   const sectionHeaderOnClick = (event: React.UIEvent<HTMLHeadingElement>) => {
     resetData(props.getDataFromApi)
     const DEFAULT_TAB_OFFSET: number = 1
-    const initData: DataShell[] = []
-    const newState: DataShell[] = initData.concat(props.getDataFromApi)
     const TAB_INDEX: number = event && event.target && event.target['tabIndex']
     const tabIndexSelection: number = (event && event.target) 
       ? TAB_INDEX
       : DEFAULT_TAB_OFFSET
-    const INDEX_UNIT: number = (tabIndexSelection-1)
+    const INDEX_UNIT: number = (tabIndexSelection - 1)
+    const initData: DataShell[] = []
+    const newState: DataShell[] = initData.concat(props.getDataFromApi)
     const dataShellInit: DataShell = {
       mode: 'off'
     }
     const itemModeContext = newState && newState[INDEX_UNIT] 
       ? newState[INDEX_UNIT] 
       : dataShellInit 
+
     itemModeContext.mode = props && props.localState 
       && props.localState[INDEX_UNIT] 
       && props.localState[INDEX_UNIT].mode !== OFF_STATE
@@ -44,13 +45,15 @@ const Listing: React.FC<Accordian> = (props: Accordian) => {
 
   return (
     <li className="A-list-component__listing">
-      <h2 className="A-list-component__header"
-          tabIndex={(props.index+1)}
-          aria-expanded={props.localState[props.index].mode !== props.val.mode
-            ? ARIA_BOOL_TRULY_TRUE 
-            : ARIA_BOOL_NOT_TRULY_TRUE}
-          onKeyPress={sectionHeaderOnClick}
-          onClick={sectionHeaderOnClick}>section {props.index}</h2>
+      <header>
+        <h2 className="A-list-component__header"
+            tabIndex={(props.index + 1)}
+            aria-expanded={props.localState[props.index].mode !== props.val.mode
+              ? ARIA_BOOL_TRULY_TRUE 
+              : ARIA_BOOL_NOT_TRULY_TRUE}
+            onKeyPress={sectionHeaderOnClick}
+            onClick={sectionHeaderOnClick}>section {props.index}</h2>
+      </header>
       <ul className={props.localState[props.index].mode}>
         <li>init data regarding listing ({props.index}): {props.val.mode}</li>
       </ul>
