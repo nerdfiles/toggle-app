@@ -1,8 +1,8 @@
-import logo from './logo.svg';
 import React from 'react';
 import './App.css';
 
 import List from './shared/components/List/List';
+// import ModularHomePageIndex from './modules/home/pages/Index'
 
 const App: React.FC = () => {
   return (
