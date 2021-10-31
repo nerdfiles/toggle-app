@@ -22,17 +22,18 @@ const Listing: React.FC<Accordian> = (props: Accordian) => {
     resetData(props.getDataFromApi)
     const DEFAULT_TAB_OFFSET: number = 1
     const initData: DataShell[] = []
-    const newState = initData.concat(props.getDataFromApi)
-    const TAB_INDEX = event && event.target && event.target['tabIndex']
+    const newState: DataShell[] = initData.concat(props.getDataFromApi)
+    const TAB_INDEX: number = event && event.target && event.target['tabIndex']
     const tabIndexSelection: number = (event && event.target) 
       ? TAB_INDEX
       : DEFAULT_TAB_OFFSET
     const INDEX_UNIT: number = (tabIndexSelection-1)
+    console.log(TAB_INDEX)
 
     const itemModeContext = newState && newState[INDEX_UNIT] 
       ? newState[INDEX_UNIT] 
       : { mode: 'off' }
-    itemModeContext.mode = props &&props.localState 
+    itemModeContext.mode = props && props.localState 
       && props.localState[INDEX_UNIT] 
       && props.localState[INDEX_UNIT].mode !== OFF_STATE
         ? OFF_STATE 
