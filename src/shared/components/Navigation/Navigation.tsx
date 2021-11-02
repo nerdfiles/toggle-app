@@ -1,15 +1,25 @@
 import React from 'react';
 import SiteNavigationElement from './../SiteNavigationElement/SiteNavigationElement';
 
-interface SiteMapItem {
-  header: string,
-  url: string
+interface Funcy {
+  (title: string): void
 }
 
+interface PropsSiteElement {
+  header: string,
+  url: string,
+  func: Funcy
+}
+
+
+
 const Navigation: React.FC = () => {
-  const siteMap: SiteMapItem[] = [{
+  const siteMap: PropsSiteElement[] = [{
     header: 'example.com',
-    url: 'http://example.com'
+    url: 'http://example.com',
+    func: (title: string) => {
+      console.log(title)
+    }
   }];
 
   return (
@@ -22,6 +32,7 @@ const Navigation: React.FC = () => {
               <SiteNavigationElement 
                 header={siteMapNavigationElement.header}
                 url={siteMapNavigationElement.url}
+                func={siteMapNavigationElement.func}
               />
             )
           })

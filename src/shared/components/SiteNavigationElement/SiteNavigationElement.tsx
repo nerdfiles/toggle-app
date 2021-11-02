@@ -1,8 +1,13 @@
 import React from 'react';
 
+interface Funcy {
+  (title: string): void
+}
+
 interface PropsSiteElement {
   header: string,
-  url: string
+  url: string,
+  func: Funcy
 }
 
 
