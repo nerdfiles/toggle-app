@@ -16,10 +16,6 @@ const App: React.FC = () => {
       <Navigation />
       <Sidebar />
       <List />
-      <div>
-        <a href="https://github.com/nerdfiles/toggle-app" 
-           target="_blank">repo</a>
-      </div>
       <Footer />
     </div>
   );
