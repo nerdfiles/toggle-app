@@ -7,10 +7,14 @@ interface PropsSiteElement {
 
 
 const SiteNavigationElement: React.FC<PropsSiteElement> = (props: PropsSiteElement) => {
-  console.log({ props })
+  const ajaxClick = (event: React.UIEvent<HTMLAnchorElement>) => {
+    event.preventDefault();
+    console.log('GET:', props.url)
+  }
   return (
-    <>
-    </>
+    <li>
+      <a onClick={ajaxClick} href={props.url}>{props.header}</a>
+    </li>
   );
 };
 
