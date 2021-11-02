@@ -15,6 +15,7 @@ const SiteNavigationElement: React.FC<PropsSiteElement> = (props: PropsSiteEleme
   const ajaxClick = (event: React.UIEvent<HTMLAnchorElement>) => {
     event.preventDefault();
     console.log('GET:', props.url)
+    props.func(props.header)
   }
   return (
     <li>

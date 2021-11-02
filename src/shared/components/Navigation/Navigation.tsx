@@ -18,7 +18,7 @@ const Navigation: React.FC = () => {
     header: 'example.com',
     url: 'http://example.com',
     func: (title: string) => {
-      console.log(title)
+      console.log('TITLE', title)
     }
   }];
 
