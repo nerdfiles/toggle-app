@@ -13,11 +13,8 @@ const Listing: React.FC<Accordian> = (props: Accordian) => {
   const ON_STATE = 'on'
   const ARIA_BOOL_NOT_TRULY_TRUE: boolean = false
   const ARIA_BOOL_TRULY_TRUE: boolean = true
-  const resetData = (shellList: DataShell[]) => {
-    shellList.forEach((val) => {
-      val.mode = 'off'
-    })
-  }
+  const resetData = (shellList: DataShell[]) => 
+    shellList.forEach(val => val.mode = 'off')
   const sectionHeaderOnClick = (event: React.UIEvent<HTMLHeadingElement>) => {
     resetData(props.getDataFromApi)
     const DEFAULT_TAB_OFFSET: number = 1
