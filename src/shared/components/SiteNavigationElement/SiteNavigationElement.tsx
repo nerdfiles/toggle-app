@@ -19,7 +19,8 @@ const SiteNavigationElement: React.FC<PropsSiteElement> = (props: PropsSiteEleme
   }
   return (
     <li>
-      <a onClick={ajaxClick} href={props.url}>{props.header}</a>
+      <a onClick={ajaxClick} 
+         href={props.url}>{props.header}</a>
     </li>
   );
 };
